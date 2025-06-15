@@ -2,13 +2,24 @@
 <html lang="zh">
 <head>
   <meta charset="UTF-8">
-  <title>林翰 - UE开发工程师</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>林翰 - 个人介绍</title>
   <link rel="stylesheet" href="style.css">
+  <script>
+    // 添加平滑滚动效果
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
 </head>
 <body>
   <header>
     <h1>林翰</h1>
-    <p>UE5客户端开发工程师 | 全栈开发 | AIGC交互 | 游戏&插件开发</p>
     <nav>
       <a href="index.html">主页</a>
       <a href="about.html">关于我</a>
@@ -17,15 +28,134 @@
   </header>
 
   <main>
-    <section class="intro">
-      <h2>你好，我是林翰。</h2>
-      <p>专注于Unreal Engine相关开发，参与多项展览交互项目、游戏开发与AI交互系统落地实践，拥有扎实的程序架构设计经验。</p>
+    <section id="home" class="intro">
+      <h2>个人自述</h2>
+      <p>大家好，我是从2021年10月开始学习关于Unreal Engine相关技术内容，仍然记得当时所学习的UE版本是4.26.</p>
+      <p>在学习的过程中，我并非是一开始就学习编程的，而是先学的地编，在那个时候，模型的制作、UV的布线、八猴的烘焙、SP的贴图、材质的制作、场景的搭建耗费了我大量的时间，包括粒子特效，而在当时，蓝图对我而言是一个未知的领域。</p>
+      <p>而在这之后，我做了一些简单的场景后，我并不满足，因为我的想法是做一个游戏出来，所以我开始学习蓝图，开始一点点的制作项目，虽然在现在的我看来，都是一些简单甚至是简陋的游戏，但对于当时我而言，是一些足以拿出的Demo。</p>
+      <p>而后，我发现仅仅是使用蓝图，是远远不够的，但我并不会U++，甚至在哔哩哔哩的视频中，我完全没看懂他们讲的一些东西，所以我开始学习C语言，慢慢的学会C++，然后是U++。</p>
+      <p>期间也是刷着算法题，参加比赛啥的，但没有一个很好的成绩，毕竟我的想法并非是在技术领域的深耕，而是制作游戏。</p>
+      <p>期间我去实习了一次，通过UE5与AI的结合，我们参加了由习主席致辞的2023年乌镇世界互联网峰会。</p>
+      <p>我触碰了AI，开始学习AI，从AI大模型的对话、画图、视频、TTS、Rag等等，我掌握了越来越多的技术，但关于游戏的制作一直没有进行下去，我尝试用一个月自己去开发，但一个月的时间远远不够。</p>
+      <p>我比较喜欢独立游戏开发者这个称号，或许是因为这个称号有独行者的意思吧，但我在有些时候也被叫做人工智能领域开发者，造化弄人。</p>
+      <p>我能感觉到自己越来越倾向全栈开发者，我还得努力一下下，我还是想做一个让自己足够满意的游戏，或许这也是因为我的吹毛求疵吧。</p>
+    </section>
+
+    <section id="about">
+      <h2>关于我</h2>
+      <a href="projects.html" class="btn">查看关于我 →</a>
+    </section>
+
+    <section id="projects">
+      <h2>项目经历</h2>
       <a href="projects.html" class="btn">查看我的项目 →</a>
     </section>
+    
+    <section id="pictures">
+  <h2>相关图片</h2>
+  <div class="gallery">
+    <img src="assets/Self/1.jpg" alt="个人照" data-full="assets/Self/1.jpg" />
+    <img src="assets/Self/2.jpg" alt="2023乌镇世界互联网峰会-5G+AI越韵流芳" data-full="assets/Self/2.jpg" />
+    <img src="assets/Self/3.jpg" alt="第三届济南国际双年展-记住我而非存储我" data-full="assets/Self/3.jpg" />
+    <img src="assets/Self/4.jpg" alt="上海油罐艺术中心-未来样本" data-full="assets/Self/4.jpg" />
+    <img src="assets/Self/5.jpg" alt="第十届区块链全球峰会" data-full="assets/Self/5.jpg" />
+  </div>
+</section>
+
+<!-- 弹窗模态框 -->
+<div id="lightbox" class="lightbox" style="display:none;">
+  <span class="close">&times;</span>
+  <img class="lightbox-img" src="" alt="大图">
+  <div class="caption"></div>
+</div>
+
+<style>
+  .gallery img {
+    width: 150px;
+    height: 150px;
+    margin: 8px;
+    cursor: pointer;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    object-fit: cover; /* 保持比例裁剪填充 */
+    transition: border-color 0.3s;
+  }
+  .gallery img:hover {
+    border-color: #555;
+  }
+  .lightbox {
+    position: fixed; 
+    top: 0; left: 0; width: 100%; height: 100%; 
+    background: rgba(0,0,0,0.8);
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    flex-direction: column;
+    z-index: 1000;
+  }
+  .lightbox-img {
+    max-width: 90vw;
+    max-height: 80vh;
+    border-radius: 6px;
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
+  }
+  .close {
+    position: absolute;
+    top: 20px; right: 30px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1001;
+  }
+  .caption {
+    color: white;
+    margin-top: 10px;
+    font-size: 18px;
+  }
+</style>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox.querySelector('.lightbox-img');
+  const caption = lightbox.querySelector('.caption');
+  const closeBtn = lightbox.querySelector('.close');
+
+  document.querySelectorAll('#pictures .gallery img').forEach(img => {
+    img.addEventListener('click', () => {
+      lightbox.style.display = 'flex';
+      lightboxImg.src = img.getAttribute('data-full');
+      caption.textContent = img.alt;
+    });
+  });
+
+  closeBtn.addEventListener('click', () => {
+    lightbox.style.display = 'none';
+    lightboxImg.src = '';
+    caption.textContent = '';
+  });
+
+  lightbox.addEventListener('click', e => {
+    if (e.target === lightbox) {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+      caption.textContent = '';
+    }
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+      caption.textContent = '';
+    }
+  });
+</script>
   </main>
 
   <footer>
-    <p>Mail: q244645787@gmail.com |  244645787@qq.com</p>
+    <p>我的邮箱在下面，但是我一般不怎么看，所以回复的一般都比较晚，请见谅。</p>
+    <p>邮箱: <a href="mailto:q244645787@gmail.com">q244645787@gmail.com</a> | <a href="mailto:244645787@qq.com">244645787@qq.com</a></p>
   </footer>
 </body>
 </html>

@@ -4,54 +4,134 @@ body {
   background-color: #f4f4f4;
   margin: 0;
   padding: 0;
+  color: #333;
 }
 
 header {
-  background: #333;
+  background: #007acc;
   color: white;
   padding: 20px;
   text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000; /* 确保导航栏始终在最上层 */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+header nav {
+  margin-top: 10px;
 }
 
 header nav a {
   color: white;
-  margin: 0 10px;
+  margin: 0 15px;
   text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+  position: relative; /* 确保链接不会被遮盖 */
+}
+
+header nav a::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+header nav a:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 header nav a:hover {
-  text-decoration: underline;
+  color: #005fa3;
 }
 
 main {
-  padding: 20px;
-  max-width: 900px;
-  margin: auto;
+  padding: 40px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
   background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-top: -40px;
+  position: relative;
+  z-index: 1;
+}
+
+section {
+  margin-bottom: 40px;
 }
 
 section h2 {
-  color: #333;
-  margin-top: 30px;
+  color: #007acc;
+  margin-top: 0;
+  border-bottom: 2px solid #007acc;
+  padding-bottom: 10px;
+}
+
+section p {
+  line-height: 1.8;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: #007acc;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.btn:hover {
+  background: #005fa3;
 }
 
 footer {
   background: #333;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 20px;
+  margin-top: 40px;
+  font-size: 0.9rem;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 10px 15px;
-  background: #007acc;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+footer p {
+  margin: 0;
 }
 
-.btn:hover {
-  background: #005fa3;
+@media (max-width: 768px) {
+  header {
+    padding: 15px;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  main {
+    padding: 30px 15px;
+  }
+
+  section h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    padding: 10px 15px;
+  }
 }
