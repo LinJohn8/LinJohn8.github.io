@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>林翰 - 个人介绍</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* 缩略图样式 */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 20px;
+    }
+
+    .gallery img {
+      width: 150px;
+      height: 150px;
+      cursor: pointer;
+      object-fit: cover;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      transition: border-color 0.3s;
+    }
+
+    .gallery img:hover {
+      border-color: #555;
+    }
+
+    /* 模态框样式 */
+    .lightbox {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.8);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      z-index: 1000;
+    }
+
+    .lightbox-img {
+      max-width: 90vw;
+      max-height: 80vh;
+      border-radius: 6px;
+      box-shadow: 0 0 15px rgba(255,255,255,0.3);
+    }
+
+    .close {
+      position: absolute;
+      top: 20px;
+      right: 30px;
+      font-size: 40px;
+      color: white;
+      cursor: pointer;
+      user-select: none;
+      z-index: 1001;
+    }
+
+    .caption {
+      color: white;
+      margin-top: 10px;
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>林翰</h1>
+    <nav>
+      <a href="index.html">主页</a>
+      <a href="about.html">关于我</a>
+      <a href="projects.html">项目经历</a>
+      <a href="support.html">(#^.^#)支持一下(#^.^#)</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="money">
+      <h2>我臭不要脸</h2>
+      <div class="support gallery">
+        <img src="assets/Support/zfb.jpg" alt="支付宝" data-full="assets/Support/zfb.jpg" />
+        <img src="assets/Support/wx.jpg" alt="微信" data-full="assets/Support/wx.jpg" />
+      </div>
+    </section>
+
+    <!-- 弹窗模态框 -->
+    <div id="lightbox" class="lightbox">
+      <span class="close">&times;</span>
+      <img class="lightbox-img" src="" alt="大图">
+      <div class="caption"></div>
+    </div>
+  </main>
+
+  <footer>
+    <p>我的邮箱在下面，但是我一般不怎么看，所以回复的一般都比较晚，请见谅。</p>
+    <p>邮箱: <a href="mailto:q244645787@gmail.com">q244645787@gmail.com</a> | <a href="mailto:244645787@qq.com">244645787@qq.com</a></p>
+  </footer>
+
+  <script>
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // 弹窗逻辑
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = lightbox.querySelector('.lightbox-img');
+    const caption = lightbox.querySelector('.caption');
+    const closeBtn = lightbox.querySelector('.close');
+
+    document.querySelectorAll('.gallery img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightbox.style.display = 'flex';
+        lightboxImg.src = img.getAttribute('data-full');
+        caption.textContent = img.alt;
+      });
+    });
+
+    closeBtn.addEventListener('click', () => {
+      lightbox.style.display = 'none';
+      lightboxImg.src = '';
+      caption.textContent = '';
+    });
+
+    lightbox.addEventListener('click', e => {
+      if (e.target === lightbox) {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+        caption.textContent = '';
+      }
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+        lightbox.style.display = 'none';
+        lightboxImg.src = '';
+        caption.textContent = '';
+      }
+    });
+  </script>
+</body>
+</html>
