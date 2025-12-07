@@ -1,180 +1,469 @@
+/* ==========================================================================
+   1. 基础设置与变量 (Base & Variables)
+   ========================================================================== */
 :root {
-  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-  --dark-gradient: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%);
-  --glass-bg: rgba(255, 255, 255, 0.1);
-  --glass-border: rgba(255, 255, 255, 0.2);
-  --shadow-light: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-heavy: 0 15px 30px rgba(0, 0, 0, 0.2);
+  --bg-color: #050510;                 /* 深邃宇宙底色 */
+  --glass-panel: rgba(10, 15, 30, 0.9); /* 左侧面板背景 */
+  --glass-border: rgba(255, 255, 255, 0.1); /* 边框 */
+  --neon-cyan: #00f3ff;                /* 赛博青 */
+  --neon-purple: #bc13fe;              /* 赛博紫 */
+  --text-main: #ffffff;                /* 主文字色 */
+  --text-muted: #a0a0b0;               /* 次要文字色 */
+  --font-tech: 'Orbitron', sans-serif; 
 }
 
 body {
-  font-family: 'Arial', sans-serif;
-  line-height: 1.6;
-  background: var(--dark-gradient);
+  font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
   margin: 0;
   padding: 0;
-  color: white;
-  min-height: 100vh;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh; /* 确保最小高度 */
+  overflow-x: hidden;
+  /* index 页面默认设置，其他页面可覆盖 */
 }
 
-header {
-  background: var(--primary-gradient);
-  color: white;
-  padding: 20px;
-  text-align: center;
-  box-shadow: var(--shadow-heavy);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--glass-border);
-}
-
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-}
-
-header nav {
-  margin-top: 10px;
-}
-
-header nav a {
-  color: white;
-  margin: 0 15px;
+a {
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-  position: relative; /* 确保链接不会被遮盖 */
-}
-
-header nav a::after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  transform: scaleX(0);
-  height: 2px;
-  bottom: -2px;
-  left: 0;
-  background-color: white;
-  transform-origin: bottom right;
-  transition: transform 0.25s ease-out;
-}
-
-header nav a:hover::after {
-  transform: scaleX(1);
-  transform-origin: bottom left;
-}
-
-header nav a:hover {
-  color: #005fa3;
-}
-
-main {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: var(--glass-bg);
-  backdrop-filter: blur(20px);
-  box-shadow: var(--shadow-heavy);
-  border-radius: 24px;
-  margin-top: -40px;
-  position: relative;
-  z-index: 1;
-  border: 1px solid var(--glass-border);
-}
-
-section {
-  margin-bottom: 40px;
-  background: var(--glass-bg);
-  backdrop-filter: blur(10px);
-  padding: 30px;
-  border-radius: 16px;
-  border: 1px solid var(--glass-border);
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-section:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-heavy);
-}
-
-section h2 {
-  color: white;
-  margin-top: 0;
-  border-bottom: 2px solid rgba(255,255,255,0.3);
-  padding-bottom: 10px;
-}
-
-section p {
-  line-height: 1.8;
-}
-
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 24px;
-  background: var(--secondary-gradient);
-  color: white;
-  text-decoration: none;
-  border-radius: 12px;
-  font-weight: bold;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  border: none;
-  box-shadow: var(--shadow-light);
-}
-
-.btn:hover {
-  transform: translateY(-3px);
-  box-shadow: var(--shadow-heavy);
-}
-
-footer {
-  background: rgba(0,0,0,0.3);
-  color: white;
-  text-align: center;
-  padding: 30px;
-  margin-top: 60px;
-  font-size: 1rem;
-  backdrop-filter: blur(10px);
-  border-top: 1px solid var(--glass-border);
-}
-
-footer p {
-  margin: 0;
-  opacity: 0.8;
-}
-
-footer a {
-  color: #f093fb;
-  text-decoration: none;
+  color: var(--neon-cyan);
   transition: all 0.3s ease;
 }
 
-footer a:hover {
-  color: #f5576c;
-  text-decoration: underline;
+a:hover {
+  color: var(--neon-purple);
 }
 
-@media (max-width: 768px) {
+/* 滚动条美化 (Webkit) */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.1);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}
+
+/* ==========================================================================
+   2. 页面加载器 (Initial Loader - 用于快速进入页面)
+   ========================================================================== */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color);
+  z-index: 99999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.4s ease-out, visibility 0.4s; /* 快速淡出 */
+}
+
+.loader-content {
+  text-align: center;
+}
+
+.spinner {
+  border: 4px solid rgba(255, 255, 255, 0.2);
+  border-top: 4px solid var(--neon-cyan);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ==========================================================================
+   3. 首页分屏布局 (Split Screen Layout)
+   ========================================================================== */
+.split-wrapper {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* 左侧：内容面板 (可滚动) */
+.content-panel {
+  width: 45%; /* 占据 45% */
+  min-width: 400px;
+  max-width: 700px;
+  background: var(--glass-panel);
+  border-right: 1px solid var(--glass-border);
+  padding: 40px;
+  box-sizing: border-box;
+  overflow-y: auto; /* 核心：允许内容区独立滚动 */
+  z-index: 10;
+  position: relative;
+}
+
+/* 右侧：3D 交互区 (占据剩余空间) */
+.visual-panel {
+  flex-grow: 1; /* 占据剩余的 55% */
+  position: relative;
+  z-index: 5;
+  background: var(--bg-color);
+}
+
+/* Three.js Canvas 充满右侧 */
+#three-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* 3D 预加载条 (显示在右侧) */
+#visual-loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--neon-cyan);
+  font-family: monospace;
+  text-align: center;
+  padding: 20px;
+  border: 1px dashed var(--glass-border);
+  background: rgba(0,0,0,0.5);
+  z-index: 15;
+}
+
+/* ==========================================================================
+   4. 内部内容组件样式
+   ========================================================================== */
+header {
+  border-bottom: 2px solid var(--neon-cyan);
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+}
+
+header h1 {
+  font-family: var(--font-tech);
+  color: var(--neon-cyan);
+  margin: 0;
+  font-size: 2.5rem;
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.4);
+}
+
+header nav a {
+  margin-right: 20px;
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+header nav a:hover {
+  color: var(--neon-cyan);
+}
+
+/* 通用 Section 样式 */
+section {
+  padding: 25px 0;
+  border-bottom: 1px dashed var(--glass-border);
+  margin-bottom: 20px;
+}
+
+section:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+section h2 {
+  color: var(--neon-purple);
+  font-size: 1.5rem;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+/* 打字机样式 */
+.typing-text {
+  min-height: 1.5em;
+  font-family: monospace;
+  font-size: 1.2rem;
+  color: #fff;
+}
+
+/* 按钮样式 */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 15px;
+  border: 1px solid var(--neon-cyan);
+  background: rgba(0, 243, 255, 0.1);
+  color: var(--neon-cyan);
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background: var(--neon-cyan);
+  color: var(--bg-color);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.5);
+}
+
+/* 翻转卡片 (Flip Card) */
+.flip-card {
+  perspective: 1000px;
+  width: 100%;
+  height: 100px;
+  margin-bottom: 20px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+
+.flip-card-back {
+  background-color: var(--neon-purple);
+  background: linear-gradient(135deg, rgba(188, 19, 254, 0.3) 0%, rgba(0, 243, 255, 0.3) 100%);
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back h3 { margin: 0 0 5px 0; }
+.flip-card-back p { font-size: 0.9rem; margin: 0; }
+
+/* 图片画廊 */
+.gallery {
+  display: flex; 
+  flex-wrap: wrap; 
+  gap: 16px; 
+  justify-content: flex-start; /* 左侧对齐 */
+}
+
+.gallery img {
+  width: 120px; 
+  height: 120px; 
+  object-fit: cover; 
+  cursor: zoom-in;
+  border-radius: 4px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(0, 243, 255, 0.4);
+}
+
+/* 页脚 */
+footer {
+  text-align: center;
+  padding: 20px 0 30px;
+  border-top: 1px solid var(--glass-border);
+  margin-top: 40px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.social-icons a {
+  margin: 0 10px;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+}
+
+.social-icons a:hover {
+  color: var(--neon-cyan);
+}
+
+/* 弹窗 */
+.lightbox {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+  width: 100vw; 
+  height: 100vh; 
+  background: rgba(0, 0, 0, 0.95); 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  z-index: 99999;
+}
+
+.lightbox .close {
+  position: fixed; 
+  top: 24px; 
+  right: 32px; 
+  font-size: 40px; 
+  color: #fff; 
+  font-weight: bold; 
+  cursor: pointer; 
+  z-index: 100000;
+  transition: color 0.3s;
+}
+
+.lightbox .close:hover {
+  color: var(--neon-cyan);
+}
+
+/* 返回顶部 */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background: var(--neon-cyan);
+  color: var(--bg-color);
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 243, 255, 0.4);
+  opacity: 0.8;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 100;
+}
+
+.back-to-top.show {
+  display: flex;
+}
+
+.back-to-top:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   5. 响应式适配 (Mobile)
+   ========================================================================== */
+@media (max-width: 900px) {
+  .split-wrapper {
+    flex-direction: column; /* 垂直堆叠 */
+  }
+
+  .content-panel {
+    width: 100%;
+    min-width: unset;
+    max-width: unset;
+    padding: 20px;
+    border-right: none;
+    overflow-y: auto;
+  }
+
+  .visual-panel {
+    height: 300px; /* 手机端给 3D 一个固定高度 */
+    width: 100%;
+  }
+
   header {
-    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  header nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
   }
 
-  header h1 {
-    font-size: 2rem;
+  header nav a {
+    margin-right: 0;
   }
+}
 
-  main {
-    padding: 30px 15px;
-  }
+/* ==========================================================================
+   6. 通用页面布局 (General Page Layout for About, Projects, Support)
+   ========================================================================== */
 
-  section h2 {
-    font-size: 1.5rem;
-  }
+/* 保证非首页页面可以正常滚动 */
+.general-page-body {
+    height: auto !important; 
+    overflow-y: auto !important; 
+    overflow-x: hidden;
+}
 
-  .btn {
-    padding: 10px 15px;
-  }
+/* 页面主容器：居中显示，留出背景 */
+.main-page-layout {
+    max-width: 1000px; /* 限制内容最大宽度 */
+    margin: 40px auto; /* 居中 */
+    padding: 0 20px;
+    position: relative;
+    z-index: 10;
+}
+
+/* 通用 Header 样式 (非分屏模式) */
+.general-page-body header {
+    background: rgba(5, 5, 16, 0.95);
+    backdrop-filter: blur(5px);
+    position: sticky; /* 导航栏固定 */
+    top: 0;
+    z-index: 100;
+    padding: 15px 40px;
+    border-bottom: 1px solid var(--glass-border);
+}
+
+.general-page-body header h1 {
+    font-size: 1.8rem;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.general-page-body header nav {
+    float: right;
+    vertical-align: middle;
+    padding-top: 5px;
+}
+.general-page-body header nav a {
+    color: var(--text-muted);
+}
+.general-page-body header nav a:hover {
+    color: var(--neon-cyan);
+}
+
+
+/* 通用 Section 样式 (卡片化) */
+.main-page-layout section {
+    background: var(--glass-panel); /* 使用半透明背景 */
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    border-radius: 12px;
+    padding: 30px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+
+.main-page-layout section h2 {
+    color: var(--neon-cyan);
+    border-bottom: 1px dashed var(--glass-border);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
 }

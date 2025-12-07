@@ -3,250 +3,351 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>林翰 - 个人介绍</title>
+  <title>林翰 - 独立游戏开发者 & 人工智能开发者</title>
+  
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
   <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
+  
   <div id="loader">
     <div class="loader-content">
       <div class="spinner"></div>
-      <h2 style="color: white; font-weight: 500;">林翰的个人空间</h2>
-      <p style="color: rgba(255,255,255,0.8); margin-top: 15px;">加载中...</p>
+      <h2 style="color: white; font-weight: 500;">林翰的个人主页</h2>
+      <p style="color: rgba(255,255,255,0.8); margin-top: 15px;">INITIALIZING...</p>
     </div>
   </div>
   
-  <div id="three-background"></div>
+  <div class="split-wrapper">
 
-  <header id="header">
-    <h1>林翰</h1>
-    <nav>
-      <a href="index.html"><i class="fas fa-home"></i> 主页</a>
-      <a href="about.html"><i class="fas fa-user"></i> 关于我</a>
-      <a href="projects.html"><i class="fas fa-code"></i> 项目经历</a>
-      <a href="support.html"><i class="fas fa-heart"></i> (#^.^#)支持一下(#^.^#)</a>
-    </nav>
-  </header>
+    <div class="content-panel">
 
-  <main>
-    <section id="myself">
-      <h2><i class="fas fa-id-card"></i> 网名</h2>
-      <div class="typing-text" id="nickname-typing"></div>
-    </section>
+      <header id="header">
+        <h1>林翰 / LinJohn</h1>
+        <nav>
+          <a href="index.html"><i class="fas fa-home"></i> 主页</a>
+          <a href="about.html"><i class="fas fa-user"></i> 关于我</a>
+          <a href="projects.html"><i class="fas fa-code"></i> 项目经历</a>
+          <a href="support.html"><i class="fas fa-heart"></i> (#^.^#)支持一下(#^.^#)</a>
+        </nav>
+      </header>
 
-    <section id="about">
-      <h2><i class="fas fa-info-circle"></i> 关于我</h2>
-      
-      <div class="flip-card">
-        <div class="flip-card-inner">
-          <div class="flip-card-back">
-            <h3>个人简介</h3>
-            <p>独立游戏开发者 & AI领域探索者<br>专注于Unreal Engine开发与AI技术融合</p>
+      <main>
+        <section id="myself">
+          <h2><i class="fas fa-id-card"></i> 网名 / Terminal ID</h2>
+          <div class="typing-text" id="nickname-typing"></div>
+        </section>
+
+        <section id="about">
+          <h2><i class="fas fa-info-circle"></i> 关于我 / About Me</h2>
+          
+          <div class="flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <p>点击或悬停查看核心标签</p>
+              </div>
+              <div class="flip-card-back">
+                <h3>个人简介</h3>
+                <p>独立游戏开发者 & 人工智能开发者<br>专注于Unreal Engine开发与AI技术融合</p>
+              </div>
+            </div>
           </div>
+          <a href="about.html" class="btn">查看完整介绍 <i class="fas fa-arrow-right"></i></a>
+        </section>
+
+        <section id="projects">
+          <h2><i class="fas fa-laptop-code"></i> 项目经历 / Projects</h2>
+          <p>了解我在 Unreal Engine 和 AI 领域的工作成果。</p>
+          <a href="projects.html" class="btn">查看我的项目 <i class="fas fa-arrow-right"></i></a>
+        </section>
+        
+        <section id="home" class="intro">
+          <h2><i class="fas fa-user-circle"></i> 个人自述 / Personal Statement</h2>
+          <p>大家好，这是一段关于我个人经历的分享。2021年10月，我开始接触并学习Unreal Engine相关技术，当时用的是4.26版本，至今仍是记忆犹新。</p>
+          <p>学习之初，我并没有直接接触编程，而是先从地编入手。那段时间，我花了大量时间在模型制作、UV拆分、光照烘焙、贴图绘制、材质调试以及场景搭建上，甚至还深入研究了粒子特效。蓝图对那时的我而言，还是一片陌生的领域。</p>
+          <p>做了一些简单场景后，我意识到自己不满足于此。我想要的是做出一款真正的游戏，于是我开始学习蓝图，开始制作了一些小项目。虽然现在回头看这些项目，都是简单而略显粗糙的项目Demo，但对当时的我来说，都是可以展示的Demo了。</p>
+          <p>随后，我发现仅靠蓝图远远不够。虽然当时对C++一知半解，在哔哩哔哩上看相关视频时也常常云里雾里，但我没有放弃，开始从C语言入手，逐渐掌握C++，最终进入了Unreal Engine的C++编程领域。</p>
+          <p>期间，我也不断刷算法题、参加编程比赛，虽未取得特别优异的成绩，但我的目标一直不在纯技术的深耕，而是致力于游戏制作。</p>
+          <p>我曾有一次宝贵的实习经历，期间利用UE5结合AI技术，我们参与了由习近平主席致辞的2023年乌镇世界互联网峰会项目。</p>
+          <p>此后我开始接触AI，学习了从大模型对话、图像生成、视频处理、语音合成（TTS）到检索增强生成（RAG）等技术，技能不断丰富。然而，游戏开发的进度却因时间有限而停滞。我曾尝试用一个月时间独自开发游戏，但时间远远不够。</p>
+          <p>我很喜欢"独立游戏开发者"这个称号，也许是因为它带有一种独行侠的意味。但有时我也被称作人工智能领域的开发者，命运真是有趣。</p>
+          <p>现在我越来越觉得自己在向全栈开发者方向靠近，还需要继续努力。我依然渴望制作一款令自己满意的游戏，或许这源于我对细节的严格要求吧。</p>
+        </section>
+        
+        <section id="pictures">
+          <h2><i class="fas fa-images"></i> 一些相关图片 / Media Gallery</h2>
+          <p>点击图片查看大图。</p>
+          <div class="gallery">
+            <img class="zoomable" src="assets/Self/1.jpg" alt="个人照">
+            <img class="zoomable" src="assets/Self/2.jpg" alt="2023乌镇世界互联网峰会">
+            <img class="zoomable" src="assets/Self/3.jpg" alt="第三届济南国际双年展">
+            <img class="zoomable" src="assets/Self/4.jpg" alt="上海油罐艺术中心-未来样本-1">
+            <img class="zoomable" src="assets/Self/5.jpg" alt="未来样本的第一次线下版">
+            <img class="zoomable" src="assets/Self/6.jpg" alt="未来样本人员和项目理念">
+            <img class="zoomable" src="assets/Self/7.jpg" alt="上海油罐艺术中心-未来样本-2">
+            <img class="zoomable" src="assets/Self/8.jpg" alt="第二届SOULSCAPES灵源AIGC艺术设计展">
+            <img class="zoomable" src="assets/Self/9.jpg" alt="m360人机共振">
+            <img class="zoomable" src="assets/Self/10.jpg" alt="毛雯婧对未来样本的项目分享">
+            <img class="zoomable" src="assets/Self/11.jpg" alt="参加第十届全球区块链峰会">
+            <img class="zoomable" src="assets/Self/12.jpg" alt="第三届济南国际双年展合影">
+            <img class="zoomable" src="assets/Self/13.jpg" alt="Unreal合影-1">
+            <img class="zoomable" src="assets/Self/14.jpg" alt="Unreal合影-2">
+            <img class="zoomable" src="assets/Self/15.jpg" alt="Unreal合影-3">
+            <img class="zoomable" src="assets/Self/16.jpg" alt="Unreal合影-4">
+          </div>
+        </section>
+        
+        <section id="contact">
+          <h2><i class="fas fa-envelope"></i> 联系我 / Contact</h2>
+          
+          <div class="contact-form">
+            <div class="form-group">
+              <p>个人比较少看邮箱，所以回复可能比较慢。但如果您有项目合作意向，我会尽快回复。</p>
+              <p style="font-size: 1.1rem; color: var(--neon-cyan);">q244645787@gmail.com</p>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <div class="social-icons">
+          <a href="https://github.com/LinJohn8" class="social-icon"><i class="fab fa-github"></i></a>
         </div>
-      </div>
-      <a href="about.html" class="btn">查看关于我 <i class="fas fa-arrow-right"></i></a>
-    </section>
-
-    <section id="projects">
-      <h2><i class="fas fa-laptop-code"></i> 项目经历</h2>
-      <a href="projects.html" class="btn">查看我的项目 <i class="fas fa-arrow-right"></i></a>
-    </section>
+        
+        <p>© 2025 林翰 - 个人介绍 | Rendered with Three.js</p>
+      </footer>
+    </div>
     
-    <section id="pictures">
-      <h2><i class="fas fa-images"></i> 相关图片</h2>
-      <div class="gallery" style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center;">
-        <img class="zoomable" src="assets/Self/1.jpg" alt="个人照" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/2.jpg" alt="2023乌镇世界互联网峰会-5G+AI越韵流芳" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/3.jpg" alt="第三届济南国际双年展-记住我而非存储我" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/4.jpg" alt="上海油罐艺术中心-未来样本-1" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/5.jpg" alt="未来样本的第一次线下版" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/6.jpg" alt="未来样本人员和项目理念" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/7.jpg" alt="上海油罐艺术中心-未来样本-2" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/8.jpg" alt="第二届SOULSCAPES灵源AIGC艺术设计展" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/9.jpg" alt="m360人机共振" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/10.jpg" alt="毛雯婧对未来样本的项目分享" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/11.jpg" alt="参加第十届全球区块链峰会" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/12.jpg" alt="第三届济南国际双年展合影" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/13.jpg" alt="Unreal合影-1" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/14.jpg" alt="Unreal合影-2" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/15.jpg" alt="Unreal合影-3" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
-        <img class="zoomable" src="assets/Self/16.jpg" alt="Unreal合影-4" style="width: 200px; height: 200px; object-fit: cover; cursor: zoom-in;">
+    <div class="visual-panel" id="visual-panel">
+      <div id="three-background"></div>
+      <div id="visual-loader">
+        <div class="spinner"></div>
+        <p>Loading 3D Assets...</p>
       </div>
-    </section>
-    
-    </section>
+    </div>
+  </div>
 
-    <section id="home" class="intro">
-      <h2><i class="fas fa-user-circle"></i> 个人自述</h2>
-      <p>大家好，这是一段关于我个人经历的分享。2021年10月，我开始接触并学习Unreal Engine相关技术，当时用的是4.26版本，至今仍是记忆犹新。</p>
-      <p>学习之初，我并没有直接接触编程，而是先从地编入手。那段时间，我花了大量时间在模型制作、UV拆分、光照烘焙、贴图绘制、材质调试以及场景搭建上，甚至还深入研究了粒子特效。蓝图对那时的我而言，还是一片陌生的领域。</p>
-      <p>做了一些简单场景后，我意识到自己不满足于此。我想要的是做出一款真正的游戏，于是我开始学习蓝图，开始制作了一些小项目。虽然现在回头看这些项目，都是简单而略显粗糙的项目Demo，但对当时的我来说，都是可以展示的Demo了。</p>
-      <p>随后，我发现仅靠蓝图远远不够。虽然当时对C++一知半解，在哔哩哔哩上看相关视频时也常常云里雾里，但我没有放弃，开始从C语言入手，逐渐掌握C++，最终进入了Unreal Engine的C++编程领域。</p>
-      <p>期间，我也不断刷算法题、参加编程比赛，虽未取得特别优异的成绩，但我的目标一直不在纯技术的深耕，而是致力于游戏制作。</p>
-      <p>我曾有一次宝贵的实习经历，期间利用UE5结合AI技术，我们参与了由习近平主席致辞的2023年乌镇世界互联网峰会项目。</p>
-      <p>此后我开始接触AI，学习了从大模型对话、图像生成、视频处理、语音合成（TTS）到检索增强生成（RAG）等技术，技能不断丰富。然而，游戏开发的进度却因时间有限而停滞。我曾尝试用一个月时间独自开发游戏，但时间远远不够。</p>
-      <p>我很喜欢"独立游戏开发者"这个称号，也许是因为它带有一种独行侠的意味。但有时我也被称作人工智能领域的开发者，命运真是有趣。</p>
-      <p>现在我越来越觉得自己在向全栈开发者方向靠近，还需要继续努力。我依然渴望制作一款令自己满意的游戏，或许这源于我对细节的严格要求吧。</p>
-    </section>
-    
-    <section id="contact">
-      <h2><i class="fas fa-envelope"></i> 联系我</h2>
-      
-      <div class="contact-form">
-        <div class="form-group">
-          <p>个人比较少看邮箱，所以回复可能比较慢。</p>
-          <p>q244645787@gmail.com</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <!-- 弹窗模态框 -->
-  <div id="lightbox" class="lightbox" style="display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0, 0, 0, 0.95); justify-content: center; align-items: center; z-index: 99999;">
-    <span class="close" style="position: fixed; top: 24px; right: 32px; font-size: 32px; color: #fff; font-weight: bold; cursor: pointer; z-index: 100000;">&times;</span>
-    <img class="lightbox-img" src="" alt="大图" style="max-width: 90vw; max-height: 90vh; box-shadow: 0 0 30px rgba(255, 255, 255, 0.5); border-radius: 8px; object-fit: contain;">
+  <div id="lightbox" class="lightbox" style="display: none;">
+    <span class="close">&times;</span>
+    <img class="lightbox-img" src="" alt="大图">
   </div>
   
-  <!-- 返回顶部按钮 -->
   <div class="back-to-top" id="backToTop">
     <i class="fas fa-arrow-up"></i>
   </div>
   
-  <footer>
-    <div class="social-icons">
-      <a href="#" class="social-icon"><i class="fab fa-github"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-weixin"></i></a>
-      <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
-    </div>
-    
-    <p>© 2025 林翰 - 个人介绍 | 保留所有权利</p>
-    <p>联系方式: <a href="mailto:q244645787@gmail.com">q244645787@gmail.com</a></p>
-    <p>感谢访问我的个人网站！</p>
-  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" defer></script>
 
   <script>
-    // 页面加载动画
+    // --- 通用 JS 逻辑 ---
+    
+    // 页面加载动画（快速淡出）
     window.addEventListener('load', function() {
       const loader = document.getElementById('loader');
       setTimeout(() => {
         loader.style.opacity = '0';
         loader.style.visibility = 'hidden';
-      }, 1000);
+      }, 300); // 300ms 快速淡出
     });
     
-    // 打字机效果
+    // DOM 内容加载完成后的初始化
     document.addEventListener('DOMContentLoaded', function() {
-      const nicknames = [
-        "多方通行8;翰文侍林;",
-        "HWSLandDFTX8;LinJohn8"
-      ];
-      
-      const options = {
-        strings: nicknames,
-        typeSpeed: 100,
-        backSpeed: 60,
+      // 1. 打字机效果
+      new Typed('#nickname-typing', {
+        strings: ["多方通行8", "翰文侍林", "LinJohn8", "翰文侍林&多方通行8"],
+        typeSpeed: 80,
+        backSpeed: 50,
         loop: true,
         showCursor: true,
         cursorChar: '|',
         shuffle: true
-      };
+      });
       
-      new Typed('#nickname-typing', options);
-    });
-    
-    // 技能条动画
-    document.addEventListener('DOMContentLoaded', function() {
-      const skillBars = document.querySelectorAll('.skill-progress-inner');
+      // 2. 图片弹窗功能
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.querySelector('.lightbox-img');
+      const closeBtn = document.querySelector('.close');
       
-      // 当元素进入视口时触发动画
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            const width = entry.target.getAttribute('data-width');
-            entry.target.style.width = width + '%';
-            observer.unobserve(entry.target);
-          }
+      document.querySelectorAll('.gallery img').forEach(img => {
+        img.addEventListener('click', () => {
+          lightbox.style.display = 'flex';
+          lightboxImg.src = img.src;
+          document.body.style.overflow = 'hidden';
         });
-      }, { threshold: 0.5 });
+      });
       
-      skillBars.forEach(bar => {
-        observer.observe(bar);
-      });
-    });
-    
-    // 返回顶部按钮
-    const backToTopBtn = document.getElementById('backToTop');
-    
-    window.addEventListener('scroll', () => {
-      if (window.pageYOffset > 500) {
-        backToTopBtn.classList.add('show');
-      } else {
-        backToTopBtn.classList.remove('show');
-      }
-    });
-    
-    backToTopBtn.addEventListener('click', () => {
-      window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-      });
-    });
-    
-    // 图片弹窗功能
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.querySelector('.lightbox-img');
-    const closeBtn = document.querySelector('.close');
-    
-    document.querySelectorAll('.gallery img').forEach(img => {
-      img.addEventListener('click', () => {
-        lightbox.style.display = 'flex';
-        lightboxImg.src = img.src;
-        document.body.style.overflow = 'hidden';
-      });
-    });
-    
-    closeBtn.addEventListener('click', () => {
-      lightbox.style.display = 'none';
-      document.body.style.overflow = 'auto';
-    });
-    
-    lightbox.addEventListener('click', (e) => {
-      if (e.target === lightbox) {
+      closeBtn.addEventListener('click', () => {
         lightbox.style.display = 'none';
         document.body.style.overflow = 'auto';
-      }
-    });
-    
-    // 导航栏滚动效果
-    const header = document.getElementById('header');
-    
-    window.addEventListener('scroll', () => {
-      if (window.scrollY > 100) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-    });
-    
-    // 悬停卡片效果
-    document.querySelectorAll('.hover-card').forEach(card => {
-      card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px)';
       });
       
-      card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
+      lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+          lightbox.style.display = 'none';
+          document.body.style.overflow = 'auto';
+        }
+      });
+
+      // 3. 返回顶部按钮
+      const backToTopBtn = document.getElementById('backToTop');
+      const contentPanel = document.querySelector('.content-panel');
+
+      // 监听左侧内容区的滚动事件
+      contentPanel.addEventListener('scroll', () => {
+        if (contentPanel.scrollTop > 500) {
+          backToTopBtn.classList.add('show');
+        } else {
+          backToTopBtn.classList.remove('show');
+        }
+      });
+
+      backToTopBtn.addEventListener('click', () => {
+        contentPanel.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
       });
     });
+
+    // --- Three.js 延迟与交互逻辑 ---
     
-    // Three.js 3D背景效果
-    // ... 原始Three.js代码保持不变 ...
-    // 原始Three.js代码（为简洁起见未在此处重复，实际使用时需保留）
+    // 3. Three.js 场景初始化
+    let attractorGroup;
+    let renderer;
+    let camera;
+    let mouseX = 0;
+    let mouseY = 0;
+    let isMouseOverVisual = false;
+
+    // 当所有延迟脚本加载完成后（确保 Three.js 库可用）
+    window.addEventListener('load', () => {
+        // 确保 Three.js 已加载
+        if (typeof THREE === 'undefined') return; 
+
+        initThreeScene();
+    });
+
+    // Three.js 场景初始化函数
+    function initThreeScene() {
+        const container = document.getElementById('three-background');
+        const visualLoader = document.getElementById('visual-loader');
+        
+        // 基础设置
+        const scene = new THREE.Scene();
+        scene.fog = new THREE.FogExp2(0x050510, 0.0025);
+
+        camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+        camera.position.z = 75; 
+
+        renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+        container.appendChild(renderer.domElement);
+        
+        // 洛伦兹吸引子生成 (同前一个版本，这里为简洁省略代码细节)
+        attractorGroup = new THREE.Group();
+        scene.add(attractorGroup);
+
+        const numPoints = 15000;
+        const geometry = new THREE.BufferGeometry();
+        const positions = new Float32Array(numPoints * 3);
+        const colors = new Float32Array(numPoints * 3);
+        const color1 = new THREE.Color(0x00f3ff); 
+        const color2 = new THREE.Color(0xbc13fe);
+        let x = 0.1, y = 0, z = 0;
+        const dt = 0.008, sigma = 10, rho = 28, beta = 8/3;
+
+        for (let i = 0; i < numPoints; i++) {
+            const dx = sigma * (y - x) * dt;
+            const dy = (x * (rho - z) - y) * dt;
+            const dz = (x * y - beta * z) * dt;
+            x += dx; y += dy; z += dz;
+
+            positions[i * 3] = x * 0.6; 
+            positions[i * 3 + 1] = y * 0.6;
+            positions[i * 3 + 2] = z * 0.6;
+
+            const c = color1.clone().lerp(color2, i / numPoints);
+            colors[i * 3] = c.r;
+            colors[i * 3 + 1] = c.g;
+            colors[i * 3 + 2] = c.b;
+        }
+
+        geometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+        geometry.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+        const material = new THREE.PointsMaterial({
+            size: 0.15,
+            vertexColors: true,
+            blending: THREE.AdditiveBlending,
+            depthWrite: false,
+            transparent: true,
+            opacity: 0.8
+        });
+
+        const points = new THREE.Points(geometry, material);
+        attractorGroup.add(points);
+        
+        // 星空背景 (同前一个版本)
+        const starGeo = new THREE.BufferGeometry();
+        const starCount = 1000;
+        const starPos = new Float32Array(starCount * 3);
+        for(let i=0; i<starCount*3; i++) { starPos[i] = (Math.random() - 0.5) * 200; }
+        starGeo.setAttribute('position', new THREE.BufferAttribute(starPos, 3));
+        const starMat = new THREE.PointsMaterial({ color: 0x888888, size: 0.1, transparent: true });
+        const starMesh = new THREE.Points(starGeo, starMat);
+        scene.add(starMesh);
+
+        // 初始化完成后，移除 3D 加载条
+        visualLoader.style.opacity = 0;
+        setTimeout(() => { visualLoader.style.display = 'none'; }, 600);
+
+        // 鼠标交互监听器
+        const visualPanel = document.getElementById('visual-panel');
+
+        visualPanel.addEventListener('mouseenter', () => { isMouseOverVisual = true; });
+        visualPanel.addEventListener('mouseleave', () => { isMouseOverVisual = false; });
+        
+        visualPanel.addEventListener('mousemove', (e) => {
+            // 归一化鼠标位置 (仅在右侧面板内计算)
+            const rect = visualPanel.getBoundingClientRect();
+            mouseX = (e.clientX - rect.left - rect.width / 2) * 0.0001;
+            mouseY = (e.clientY - rect.top - rect.height / 2) * 0.0001;
+        });
+        
+        // 渲染循环
+        const animate = () => {
+            requestAnimationFrame(animate);
+
+            // 自转始终进行
+            attractorGroup.rotation.z += 0.002;
+            starMesh.rotation.y += 0.0005;
+
+            if (isMouseOverVisual) {
+                // 仅当鼠标悬停在右侧时，才响应交互
+                attractorGroup.rotation.y += 0.05 * (mouseX * 2 - attractorGroup.rotation.y);
+                attractorGroup.rotation.x += 0.05 * (mouseY * 2 - attractorGroup.rotation.x);
+            } else {
+                // 鼠标移出后，逐渐回到水平
+                attractorGroup.rotation.y += 0.02 * (0 - attractorGroup.rotation.y);
+                attractorGroup.rotation.x += 0.02 * (0 - attractorGroup.rotation.x);
+            }
+
+            renderer.render(scene, camera);
+        };
+        animate();
+
+        // 窗口调整
+        window.addEventListener('resize', () => {
+            const w = container.clientWidth;
+            const h = container.clientHeight;
+            camera.aspect = w / h;
+            camera.updateProjectionMatrix();
+            renderer.setSize(w, h);
+        });
+    }
   </script>
 </body>
 </html>

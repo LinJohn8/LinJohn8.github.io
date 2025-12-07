@@ -1,53 +1,105 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <title>关于我 - 林翰</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于我 - 林翰</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* about page specific styles for card layout */
+        .skill-list, .website-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+        .skill-list li, .website-list li {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 20px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #764ba2;
+            transition: background 0.3s;
+        }
+        .skill-list li:hover, .website-list li:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        .tech-category {
+            font-weight: bold;
+            color: #f093fb;
+            display: block;
+            margin-top: 10px;
+        }
+        .tech-detail {
+            margin-left: 15px;
+            font-size: 0.95em;
+        }
+        .website-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .website-list a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
-<body>
-  <header>
-    <h1>关于我</h1>
-    <nav>
-      <a href="index.html">主页</a>
-      <a href="about.html">关于我</a>
-      <a href="projects.html">项目经历</a>
-      <a href="support.html">(#^.^#)支持一下(#^.^#)</a>
-    </nav>
-  </header>
+<body class="general-page-body">
+    
+    <header id="header">
+        <h1>林翰 / About Me</h1>
+        <nav>
+            <a href="index.html"><i class="fas fa-home"></i> 主页</a>
+            <a href="about.html"><i class="fas fa-user"></i> 关于我</a>
+            <a href="projects.html"><i class="fas fa-code"></i> 项目经历</a>
+            <a href="support.html"><i class="fas fa-heart"></i> (#^.^#)支持一下(#^.^#)</a>
+        </nav>
+    </header>
 
-  <main>
-    <section>
-      <h2>教育经历</h2>
-      <ul>
-        <li>浙江长征职业技术学院 - 电子竞技运动与管理（2021-2024）</li>
-        <li>温州大学 - 工商管理（2024-2026）</li>
-      </ul>
+    <main class="main-page-layout">
+        
+        <section id="education">
+            <h2><i class="fas fa-graduation-cap"></i> 教育经历</h2>
+            <ul class="skill-list">
+                <li>
+                    <span class="tech-category">浙江长征职业技术学院</span> 
+                    <span class="tech-detail"> - 电子竞技运动与管理（2021-2024）</span>
+                </li>
+                <li>
+                    <span class="tech-category">温州大学</span> 
+                    <span class="tech-detail"> - 工商管理（2024-2026）</span>
+                </li>
+            </ul>
+        </section>
 
-      <h2>技术栈</h2>
-      <p>我会的可多了：</p>
-      <p><strong>🎮 UE引擎相关：</strong> UE4、UE5、WorldCreator、SpeedTree</p>
-      <p><strong>💻 编程语言与开发：</strong> C、C++、Python、JavaScript、HTML、CSS、QT</p>
-      <p><strong>🖥 前端 / 编辑器 / IDE：</strong> Typora、HBuilder X、VSCode</p>
-      <p><strong>🛠 三维建模与贴图：</strong> Blender、MAYA、3DMAX、ZBrush、Substance Painter (SP)、八猴（Marmoset Toolbag）</p>
-      <p><strong>🎨 平面设计 / 视频剪辑 / 文档工具：</strong> Photoshop (Ps)、Premiere (Pr)、WPS</p>
-      <p><strong>📊 数据分析与建模：</strong> SPSS、Vensim</p>
+        <section id="tech-stack">
+            <h2><i class="fas fa-cogs"></i> 技术栈</h2>
+            <p>我会的可多了：</p>
+            <ul class="skill-list">
+                <li><span class="tech-category">🎮 UE引擎相关：</span> <span class="tech-detail">UE4、UE5、WorldCreator、SpeedTree</span></li>
+                <li><span class="tech-category">💻 编程语言与开发：</span> <span class="tech-detail">C、C++、Python、JavaScript、HTML、CSS、QT</span></li>
+                <li><span class="tech-category">🖥 前端 / 编辑器 / IDE：</span> <span class="tech-detail">Typora、HBuilder X、VSCode</span></li>
+                <li><span class="tech-category">🛠 三维建模与贴图：</span> <span class="tech-detail">Blender、MAYA、3DMAX、ZBrush、Substance Painter (SP)、八猴（Marmoset Toolbag）</span></li>
+                <li><span class="tech-category">🎨 平面设计 / 视频剪辑 / 文档工具：</span> <span class="tech-detail">Photoshop (Ps)、Premiere (Pr)、WPS</span></li>
+                <li><span class="tech-category">📊 数据分析与建模：</span> <span class="tech-detail">SPSS、Vensim</span></li>
+            </ul>
+        </section>
 
-      <h2>职业经验</h2>
-      <p>杭州大森魔岩科技有限公司 - UE开发工程师/项目组长</p>
+        <section id="websites">
+            <h2><i class="fas fa-globe"></i> 个人网站</h2>
+            <ul class="website-list">
+                <li><i class="fab fa-github"></i> <a href="https://github.com/LinJohn8" target="_blank">github</a></li>
+                <li><i class="fas fa-blog"></i> <a href="https://blog.csdn.net/q244645787" target="_blank">CSDN博客</a></li>
+                <li><i class="fab fa-bilibili"></i> <a href="https://space.bilibili.com/20210926" target="_blank">Bilibili空间</a></li>
+                <li><i class="fab fa-zhihu"></i> <a href="https://www.zhihu.com/people/duo-fang-tong-xing-8" target="_blank">知乎</a></li>
+            </ul>
+        </section>
+        
+    </main>
 
-      <h2>个人网站</h2>
-      <ul>
-        <li><a href="https://blog.csdn.net/q244645787" target="_blank">CSDN博客</a></li>
-        <li> <a href="https://space.bilibili.com/20210926" target="_blank">Bilibili空间</a></li>
-        <li> <a href="https://www.zhihu.com/people/duo-fang-tong-xing-8" target="_blank">知乎</a></li>
-        <li> <a href="https://github.com/LinJohn8" target="_blank">github</a></li>
-      </ul>
-    </section>
-  </main>
+    <footer>
+        <p>© 2025 林翰 - 个人介绍</p>
+    </footer>
 
-  <footer>
-    <p></p>
-  </footer>
 </body>
 </html>
