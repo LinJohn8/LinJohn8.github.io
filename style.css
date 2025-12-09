@@ -317,6 +317,34 @@ footer {
   z-index: 99999;
 }
 
+.lightbox-content-wrapper {
+    max-width: 90%; 
+    max-height: 90vh; /* 限制最大高度为视口高度的 90% */
+    
+    background: rgba(0, 0, 0, 0.4); /* 给滚动区域一点背景 */
+    padding: 5px; /* 滚动条和图片之间留出空隙 */
+    
+    overflow: auto; /* 关键：内容溢出时显示滚动条 */
+    
+    /* 确保其在 Lightbox 容器中居中 */
+    display: flex;
+    justify-content: center; 
+    align-items: flex-start; /* 长图通常从顶部开始看 */
+}
+
+/* 👇 修改 .lightbox-img 样式 */
+.lightbox-img {
+    /* 核心修改： */
+    max-width: 100%; /* 宽度限制为父容器 (wrapper) 的 100% */
+    height: auto; 
+    /* 允许长图显示完整高度 */
+    
+    object-fit: contain; 
+    border-radius: 8px;
+    box-shadow: 0 0 40px rgba(0, 243, 255, 0.5); 
+    transition: all 0.3s ease;
+}
+
 .lightbox .close {
   position: fixed; 
   top: 24px; 
