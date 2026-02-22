@@ -103,7 +103,7 @@ export default function ProjectsPage() {
           </div>
         </SectionCard>
 
-        {/* Papers */}
+       {/* Papers */}
         <SectionCard title="相关论文" icon={<BookOpen className="h-4 w-4" />} revealDirection="up" delay="0.6s">
           <p className="text-sm text-muted-foreground mb-5">
             {"论文（"}
@@ -117,12 +117,38 @@ export default function ProjectsPage() {
             </a>
             {"）"}
           </p>
-          <div className="rounded-xl bg-muted/20 border border-border/50 p-5 code-block">
-            <div className="flex items-center gap-2">
-              <span className="text-neon-green font-mono text-xs">{"$"}</span>
-              <p className="font-medium text-muted-foreground text-sm font-mono">{"status: pending_publication..."}</p>
+          
+          <div className="flex flex-col gap-3">
+            {/* 已发表的论文 */}
+            <div className="group rounded-xl bg-muted/20 border border-border/50 p-5 hover:bg-muted/40 transition-all duration-300">
+              <a 
+                href="https://dl.acm.org/doi/10.1145/3779232.3779468"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start justify-between gap-4"
+              >
+                <div className="flex flex-col">
+                  <h4 className="font-semibold text-foreground group-hover:text-primary transition-colors leading-relaxed mb-2">
+                    Remember Me, Not Save Me: A Collective Memory System for Evolving Virtual Identities in Augmented Reality
+                  </h4>
+                  <p className="text-sm text-muted-foreground mb-1">
+                    <strong>Authors:</strong> Tongzhou Yu, Han Lin
+                  </p>
+                  <p className="text-xs text-muted-foreground/70 mb-4 leading-relaxed">
+                    VRCAI '25: Proceedings of the 20th International Conference on Virtual Reality Continuum and its Applications in Industry • Article No.: 44 • Published: 05 Feb 2026
+                  </p>
+                  
+                  {/* Highlights / Badges */}
+                  <div className="flex flex-wrap items-center gap-2">
+                    <span className="inline-flex items-center rounded-md bg-primary/10 px-2.5 py-1 text-xs font-medium text-primary ring-1 ring-inset ring-primary/20">
+                      ACM Digital Library
+                    </span>
+                  </div>
+                </div>
+                {/* 右侧外链小图标 */}
+                <ExternalLink className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors flex-shrink-0 mt-1" />
+              </a>
             </div>
-            <p className="text-xs text-muted-foreground/50 mt-1.5 font-mono">{"// 正在被收录中（上了后发布对应名字）"}</p>
           </div>
         </SectionCard>
 

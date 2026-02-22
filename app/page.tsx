@@ -16,21 +16,21 @@ const IMAGE_BASE = "https://linjohn8.github.io"
 
 const galleryImages = [
   { src: `${IMAGE_BASE}/assets/Self/1.jpg`, alt: "个人照" },
-  { src: `${IMAGE_BASE}/assets/Self/2.jpg`, alt: "2023 乌镇世界互联网峰会" },
-  { src: `${IMAGE_BASE}/assets/Self/3.jpg`, alt: "第三届济南国际双年展" },
+  { src: `${IMAGE_BASE}/assets/Self/2.jpg`, alt: "2023 乌镇世界互联网峰会-越韵流芳" },
+  { src: `${IMAGE_BASE}/assets/Self/3.jpg`, alt: "第三届济南国际双年展-记住我而非存储我" },
   { src: `${IMAGE_BASE}/assets/Self/4.jpg`, alt: "上海油罐艺术中心 - 未来样本" },
   { src: `${IMAGE_BASE}/assets/Self/5.jpg`, alt: "未来样本线下版首展" },
   { src: `${IMAGE_BASE}/assets/Self/6.jpg`, alt: "未来样本项目理念展示" },
   { src: `${IMAGE_BASE}/assets/Self/7.jpg`, alt: "上海油罐艺术中心展览现场" },
   { src: `${IMAGE_BASE}/assets/Self/8.jpg`, alt: "第二届 SOULSCAPES 灵源 AIGC 艺术展" },
   { src: `${IMAGE_BASE}/assets/Self/9.jpg`, alt: "m360 人机共振" },
-  { src: `${IMAGE_BASE}/assets/Self/10.jpg`, alt: "毛雯婧分享未来样本项目" },
+  { src: `${IMAGE_BASE}/assets/Self/10.jpg`, alt: "分享未来样本项目" },
   { src: `${IMAGE_BASE}/assets/Self/11.jpg`, alt: "第十届全球区块链峰会" },
   { src: `${IMAGE_BASE}/assets/Self/12.jpg`, alt: "第三届济南国际双年展合影" },
-  { src: `${IMAGE_BASE}/assets/Self/13.jpg`, alt: "Unreal Fest 合影" },
-  { src: `${IMAGE_BASE}/assets/Self/14.jpg`, alt: "Unreal 开发者社区" },
-  { src: `${IMAGE_BASE}/assets/Self/15.jpg`, alt: "Unreal Engine 技术分享" },
-  { src: `${IMAGE_BASE}/assets/Self/16.jpg`, alt: "团队合影" },
+  { src: `${IMAGE_BASE}/assets/Self/13.jpg`, alt: "Unreal 合影1" },
+  { src: `${IMAGE_BASE}/assets/Self/14.jpg`, alt: "Unreal 合影2" },
+  { src: `${IMAGE_BASE}/assets/Self/15.jpg`, alt: "Unreal 合影3" },
+  { src: `${IMAGE_BASE}/assets/Self/16.jpg`, alt: "Unreal 合影4" },
 ]
 
 // --- Scroll to top button ---
@@ -52,11 +52,15 @@ function ScrollToTopButton() {
 // --- Profile card hero (replaces code-block style) ---
 const techStack = [
   { label: "UE5", category: "Engine" },
-  { label: "C++", category: "Lang" },
+  { label: "C/C++", category: "Lang" },
   { label: "Blueprint", category: "Lang" },
   { label: "Python", category: "Lang" },
+  { label: "TypeScript", category: "Lang" }, 
   { label: "Next.js", category: "Web" },
+  { label: "Node.js", category: "Backend" },
+  { label: "Automation", category: "Tools" },
 ]
+
 const aiStack = [
   { label: "LLM", icon: "brain" },
   { label: "GenAI", icon: "image" },
@@ -64,6 +68,9 @@ const aiStack = [
   { label: "RAG", icon: "search" },
   { label: "ComfyUI", icon: "layers" },
   { label: "Diffusion", icon: "sparkles" },
+  { label: "Multi-Agent", icon: "users" },
+  { label: "Fine-Tuning", icon: "sliders" },
+  { label: "AI Entities", icon: "bot" },
 ]
 
 function ProfileCard() {
