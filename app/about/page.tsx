@@ -8,7 +8,7 @@ import { GraduationCap, Cog, Globe, Github, ExternalLink } from "lucide-react"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 
 const techStack = [
-  { category: "UE引擎相关", detail: "UE4, UE5, WorldCreator, SpeedTree", color: "primary" as const },
+  { category: "游戏引擎相关", detail: "UE4, UE5, Unity, WorldCreator, SpeedTree", color: "primary" as const },
   { category: "编程语言与开发", detail: "C, C++, Python, JavaScript, HTML, CSS, QT", color: "accent" as const },
   { category: "前端 / 编辑器 / IDE", detail: "Typora, HBuilder X, VSCode", color: "primary" as const },
   { category: "三维建模与贴图", detail: "Blender, MAYA, 3DMAX, ZBrush, SP, Marmoset", color: "accent" as const },

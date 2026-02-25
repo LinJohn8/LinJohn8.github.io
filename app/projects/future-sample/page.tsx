@@ -8,9 +8,10 @@ import { useScrollReveal } from "@/hooks/use-scroll-reveal"
 const IMAGE_BASE = "https://linjohn8.github.io"
 
 const members = [
+  { name: "毛雯婧", role: "Developer", src: `${IMAGE_BASE}/assets/project_pic/mwj.jpg` },
+  { name: "蒙政良", role: "Developer", src: `${IMAGE_BASE}/assets/project_pic/mlz.jpg` },
   { name: "林翰", role: "Developer", src: `${IMAGE_BASE}/assets/project_pic/lh.jpg` },
-  { name: "毛雯婧", role: "Designer", src: `${IMAGE_BASE}/assets/project_pic/mwj.jpg` },
-  { name: "郑路洁", role: "Researcher", src: `${IMAGE_BASE}/assets/project_pic/zlj.jpg` },
+  { name: "郑路洁", role: "Developer", src: `${IMAGE_BASE}/assets/project_pic/zlj.jpg` },
 ]
 
 const exhibitions = [
@@ -35,7 +36,7 @@ export default function FutureSamplePage() {
             <span className="text-shimmer">{"未来样本"}</span>
           </h1>
           <p className="text-muted-foreground mt-3 max-w-xl mx-auto leading-relaxed">
-            {"飞桨杯第三名（二等奖）；SOULSCAPES灵源展；伦敦设计节；油罐玩家艺术节"}
+            {"2024飞桨杯第三名（二等奖）; 第二届SOULSCAPES灵源AIGC艺术设计展; m360人机共振展; 2024上海交大文创学院中英青年数字创意展[伦敦设计节]; 2024油罐玩家艺术节; 第十八届杭州文化创意产业博览会; 2025中国·杭州艺术与科技国际双年展"}
           </p>
           <div className="divider-glow mt-8 max-w-xs mx-auto" />
         </div>
@@ -93,7 +94,7 @@ export default function FutureSamplePage() {
         <footer className="flex flex-col items-center gap-5 py-10">
           <div className="divider-glow w-full" />
           <VisitorCounter variant="compact" className="pt-2" />
-          <p className="text-[10px] text-muted-foreground/40 font-mono">{"// 2025 林翰 - 未来样本"}</p>
+          <p className="text-[10px] text-muted-foreground/40 font-mono">{"未来样本"}</p>
         </footer>
       </main>
     </div>

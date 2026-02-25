@@ -5,7 +5,7 @@ import { SectionCard } from "@/components/section-card"
 import { AnimeMascot } from "@/components/anime-mascot"
 import { VisitorCounter } from "@/components/visitor-counter"
 import { useScrollReveal } from "@/hooks/use-scroll-reveal"
-import { HandCoins, MailOpen, ExternalLink, Sparkles } from "lucide-react"
+import { HandCoins, MailOpen, ExternalLink, Sparkles, CreditCard } from "lucide-react"
 
 const IMAGE_BASE = "https://linjohn8.github.io"
 
@@ -37,9 +37,13 @@ export default function SupportPage() {
             </p>
             <Sparkles className="h-3.5 w-3.5 text-accent/60" />
           </div>
-          <div className="flex flex-col sm:flex-row justify-center gap-8">
+          
+          {/* 修改处：增加了 flex-wrap 以适应三个卡片 */}
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
+            
+            {/* 支付宝 */}
             <div className="glass-elevated rounded-2xl p-6 text-center card-hover card-scan flex flex-col items-center gradient-border">
-              <div className="img-zoom rounded-xl overflow-hidden border-2 border-accent/20 w-44 h-44">
+              <div className="img-zoom rounded-xl overflow-hidden border-2 border-accent/20 w-44 h-44 bg-white">
                 <img
                   src={`${IMAGE_BASE}/assets/Support/zfb.jpg`}
                   alt="支付宝"
@@ -51,8 +55,10 @@ export default function SupportPage() {
                 {"支付宝"}
               </p>
             </div>
+
+            {/* 微信 */}
             <div className="glass-elevated rounded-2xl p-6 text-center card-hover card-scan flex flex-col items-center gradient-border">
-              <div className="img-zoom rounded-xl overflow-hidden border-2 border-primary/20 w-44 h-44">
+              <div className="img-zoom rounded-xl overflow-hidden border-2 border-primary/20 w-44 h-44 bg-white">
                 <img
                   src={`${IMAGE_BASE}/assets/Support/wx.jpg`}
                   alt="微信"
@@ -64,6 +70,28 @@ export default function SupportPage() {
                 {"微信"}
               </p>
             </div>
+
+            {/* PayPal - 修改处：添加了 PayPal 卡片 */}
+            <a 
+              href="https://paypal.me/HWSLandDFTX8" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="glass-elevated rounded-2xl p-6 text-center card-hover card-scan flex flex-col items-center gradient-border cursor-pointer transition-transform hover:-translate-y-1"
+            >
+              {/* 这里模拟了一个 QR 区域，里面放 PayPal Logo */}
+              <div className="img-zoom rounded-xl overflow-hidden border-2 border-[#003087]/20 w-44 h-44 flex items-center justify-center bg-white">
+                {/* 使用 SVG Logo 确保无需额外图片资源即可显示，你也可以换成图片 */}
+                <svg viewBox="0 0 24 24" className="w-24 h-24 text-[#003087]" fill="currentColor">
+                   <path d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.875.812 5.216-.456 2.175-1.597 3.86-3.266 4.95-1.127.737-2.61.945-3.352.966-.206.006-.386.16-.423.364l-.32 1.834a.754.754 0 0 0 .15.65.75.75 0 0 0 .584.28h.363c1.786 0 3.17.382 4.09 1.353.69.727.973 1.708.736 2.973-.42 2.227-2.022 4.29-4.87 4.29H8.163c-.456 0-.853-.326-.933-.775l-.154-.774z"/>
+                </svg>
+              </div>
+              <p className="mt-4 font-semibold text-foreground text-sm flex items-center gap-2">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#003087]" />
+                {"PayPal"}
+                <ExternalLink className="h-3 w-3 opacity-50" />
+              </p>
+            </a>
+
           </div>
         </SectionCard>
 

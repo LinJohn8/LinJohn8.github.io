@@ -301,7 +301,9 @@ export default function HomePage() {
           <footer className="flex flex-col items-center gap-6 py-10">
             <div className="divider-glow w-full" />
 
+            {/* 社交链接区域 */}
             <div className="flex items-center gap-4 pt-2">
+              {/* GitHub */}
               <a
                 href="https://github.com/LinJohn8"
                 target="_blank"
@@ -310,6 +312,36 @@ export default function HomePage() {
                 aria-label="GitHub"
               >
                 <Github className="h-4 w-4" />
+              </a>
+
+              {/* CSDN */}
+              <a
+                href="https://blog.csdn.net/q244645787"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/20 transition-all duration-300"
+                aria-label="CSDN"
+              >
+                <svg className="h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                  {/* 使用文字直接绘制 CSDN，保持纯净简洁 */}
+                  <text x="50%" y="53%" dominantBaseline="middle" textAnchor="middle" fontSize="10" fontWeight="bold" fontFamily="sans-serif">
+                    CSDN
+                  </text>
+                </svg>
+              </a>
+
+              {/* 哔哩哔哩 (Bilibili) */}
+              <a
+                href="https://space.bilibili.com/20210926"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-9 h-9 rounded-xl glass flex items-center justify-center text-muted-foreground hover:text-primary hover:border-primary/20 transition-all duration-300"
+                aria-label="Bilibili"
+              >
+                <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor">
+                  {/* B站经典小电视的 SVG 路径 */}
+                  <path d="M17.813 4.653h.854c1.51.054 2.769.657 3.773 1.811 1.004 1.154 1.524 2.53 1.56 4.128v7.27c-.036 1.644-.58 3.08-1.636 4.307-1.056 1.227-2.308 1.884-3.758 1.972h-13.14c-1.482-.05-2.75-.708-3.806-1.977C.605 20.935.059 19.49.059 17.805V10.526c.036-1.63.56-3.044 1.572-4.24 1.012-1.196 2.264-1.84 3.758-1.933h.714V3.168c.009-.937.327-1.642.953-2.115C7.682.58 8.448.331 9.355.331c.736 0 1.487.324 2.253.972l2.316 2.057h.458L16.7 1.303c.766-.648 1.517-.972 2.253-.972.907 0 1.673.249 2.299.722.626.473.944 1.178.953 2.115v1.485zm-14.22 3.123c-1.036.045-1.85.45-2.44 1.215-.59.765-.895 1.7-.915 2.805v7.27c.018 1.143.322 2.074.915 2.796.593.723 1.413 1.112 2.46 1.166h13.14c1.026-.05 1.835-.441 2.424-1.175.59-.734.891-1.673.906-2.815V11.79c-.015-1.134-.32-2.061-.915-2.783-.594-.723-1.408-1.12-2.44-1.192H3.593zm3.178 5.485c.18 0 .348.067.504.202.157.135.236.315.236.54v1.737c0 .243-.08.432-.236.567-.156.135-.324.202-.504.202-.18 0-.348-.067-.504-.202-.156-.135-.236-.324-.236-.567v-1.737c0-.225.08-.405.236-.54.156-.135.324-.202.504-.202zm8.567 0c.18 0 .348.067.504.202.156.135.236.315.236.54v1.737c0 .243-.08.432-.236.567-.156.135-.324.202-.504.202-.18 0-.348-.067-.504-.202-.156-.135-.236-.324-.236-.567v-1.737c0-.225.08-.405.236-.54.156-.135.324-.202.504-.202z"/>
+                </svg>
               </a>
             </div>
 
