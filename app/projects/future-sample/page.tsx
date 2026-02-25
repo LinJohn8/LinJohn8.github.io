@@ -9,7 +9,7 @@ const IMAGE_BASE = "https://linjohn8.github.io"
 
 const members = [
   { name: "毛雯婧", role: "Developer", src: `${IMAGE_BASE}/assets/project_pic/mwj.jpg` },
-  { name: "蒙政良", role: "Developer", src: `${IMAGE_BASE}/assets/project_pic/mlz.jpg` },
+  { name: "蒙政良", role: "Developer", src: `${IMAGE_BASE}/assets/project_pic/mzl.jpg` },
   { name: "林翰", role: "Developer", src: `${IMAGE_BASE}/assets/project_pic/lh.jpg` },
   { name: "郑路洁", role: "Developer", src: `${IMAGE_BASE}/assets/project_pic/zlj.jpg` },
 ]
